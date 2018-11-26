@@ -1,0 +1,38 @@
+#
+# @Author: Indrit Zeqiri 
+# @Date: 2018-11-26 15:43:07 
+# @Last Modified by:   Indrit Zeqiri 
+# @Last Modified time: 2018-11-26 15:43:07 
+#
+#!/bin/sh
+
+echo "Stopping Fasty..."
+
+
+if [ -f $FASTYDIR/bin/s_*.pid ]
+then
+    PIDFILES=$FASTYDIR/bin/s_*.pid
+
+    for f in $PIDFILES
+    do
+        kill `cat ${f}`
+    done
+
+    sleep 1
+fi
+
+if [ -f $FASTYDIR/bin/fasty_app.pid ]
+then
+    kill `cat $FASTYDIR/bin/fasty_application.pid`
+fi
+
+
+sleep 1
+
+if [ -f $FASTYDIR/bin/s*.pid ]
+then
+    echo "Removing all pid files..."
+    rm $FASTYDIR/bin/s*.pid
+fi
+
+echo "Done this, :)"
