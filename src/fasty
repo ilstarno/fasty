@@ -1,0 +1,6 @@
+
+#!/bin/sh
+
+FASTYDIR=..
+
+../bin/fasty_app 8080
