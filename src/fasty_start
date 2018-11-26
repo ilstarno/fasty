@@ -1,0 +1,14 @@
+#
+# @Author: Indrit Zeqiri 
+# @Date: 2018-11-26 15:43:07 
+# @Last Modified by:   Indrit Zeqiri 
+# @Last Modified time: 2018-11-26 15:43:07 
+#
+#!/bin/sh
+
+
+
+echo "Starting Fasty..."
+
+nohup $FASTYDIR/bin/fasty_app &
+sleep 1
