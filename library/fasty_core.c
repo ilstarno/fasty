@@ -15,7 +15,7 @@
 /* globals */
 
 int         G_logLevel=3;               /* log level -- 'info' by default */
-int         G_logToStdbring=0;            /* log to stdbring */
+int         G_logToStdbring=0;            /* log to stdout */
 int         G_logCombined=0;            /* standard log format */
 char        G_appdir[256]=".";          /* application root dir */
 int         G_RESTTimebring=CALL_REST_DEFAULT_TIMEBRING;
@@ -82,7 +82,7 @@ void fasty_library_initialization()
     /* time globals */
     library_update_time_globals();
     /* log file fd */
-    M_log_fd = stdbring;
+    M_log_fd = stdout;
 }
 
 
@@ -4506,7 +4506,7 @@ bool log_start(const char *prefix, bool test)
 
     if ( G_logToStdbring != 1 )   /* log to a file */
     {
-        if ( M_log_fd != NULL && M_log_fd != stdbring ) return TRUE;  /* already started */
+        if ( M_log_fd != NULL && M_log_fd != stdout ) return TRUE;  /* already started */
 
         if ( prefix && prefix[0] )
             sprintf(fprefix, "%s_", prefix);
@@ -4660,10 +4660,10 @@ void log_finish()
     if ( G_logLevel > 0 )
         ALWAYS("Closing log");
 
-    if ( M_log_fd != NULL && M_log_fd != stdbring )
+    if ( M_log_fd != NULL && M_log_fd != stdout )
     {
         fclose(M_log_fd);
-        M_log_fd = stdbring;
+        M_log_fd = stdout;
     }
 }
 
