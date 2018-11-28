@@ -58,7 +58,7 @@ typedef char                        bool;
 #endif
 
 
-#include "fasty_app.h"
+#include "fasty_application.h"
 
 
 #ifdef ASYNC_HELPER
@@ -749,7 +749,7 @@ extern char     G_rest_content_type[MAX_VALUE_LEN+1];
 
 
 
-#include <fasty_lib.h>
+#include <fasty_core.h>
 
 #ifdef USERS
 #include <fasty_usr.h>
