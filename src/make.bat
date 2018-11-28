@@ -1,6 +1,6 @@
 @echo off
 
-echo "Making fasty_application...""
+echo "Making Web Application...""
 
 g++ fasty_application.cpp ^
 ..\library\fasty_engine.c ..\library\fasty_core.c ^
